@@ -10,7 +10,7 @@
     },
     {
         "level": 2,
-        "name": "Swole Slime",
+        "name": "Oversized Slime",
         "strength": 5,
         "vitality": 5,
         "speed": 5,
@@ -19,7 +19,7 @@
     },
     {
         "level": 3,
-        "name": "Father Slime",
+        "name": "Father of Slime",
         "strength": 6,
         "vitality": 6,
         "speed": 5,
@@ -28,7 +28,7 @@
     },
     {
         "level": 4,
-        "name": "Godfather Slime",
+        "name": "Morphed Slime",
         "strength": 6,
         "vitality": 6,
         "speed": 5,
