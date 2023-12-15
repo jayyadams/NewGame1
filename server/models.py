@@ -90,3 +90,23 @@ def level_up(self):
 
 def calculate_required_exp(level):
     return round(100 * (1.2 ** (level - 1)))
+
+# Character 
+
+class Character(db.Model, SerializerMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+    level = db.Column(db.Integer, default=1)
+    exp = db.Column(db.Integer, default=0)
+    max_hp = db.Column(db.Integer, default=150)
+    current_hp = db.Column(db.Integer, default=150)
+    strength = db.Column(db.Integer, default=5)
+    vitality = db.Column(db.Integer, default=5)
+    dexterity = db.Column(db.Integer, default=5)
+    speed = db.Column(db.Integer, default=5)
+    armor = db.Column(db.Integer, default=0)
+    luck = db.Column(db.Integer, default=0)
+    dungeon_level = db.Column(db.Integer, default=0)
+    highest_dungeon_level = db.Column(db.Integer, default=0)
+    location = db.Column(db.String, nullable=False, default='Home')
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
