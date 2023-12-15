@@ -110,3 +110,23 @@ class Character(db.Model, SerializerMixin):
     highest_dungeon_level = db.Column(db.Integer, default=0)
     location = db.Column(db.String, nullable=False, default='Home')
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    has_seen_intro = db.Column(db.Boolean, default=False)
+    isInCombat = db.Column(db.Boolean, default=False)
+
+    inventory = db.relationship('CharacterItem', back_populates='character', cascade="delete, delete-orphan")
+    quests = db.relationship('CharacterQuest', back_populates='character')
+    gold = db.Column(db.Integer, default=69)
+
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    last_saved = db.Column(db.DateTime, onupdate=datetime.utcnow)
+
+    equipped_necklace_id = db.Column(db.Integer, db.ForeignKey('item.id'))
+    equipped_necklace = db.relationship('Item', foreign_keys=[equipped_necklace_id])
+    equipped_armor_id = db.Column(db.Integer, db.ForeignKey('item.id'))
+    equipped_ring_id = db.Column(db.Integer, db.ForeignKey('item.id'))
+    equipped_ring = db.relationship('Item', foreign_keys=[equipped_ring_id])
+    equipped_armor = db.relationship('Item', foreign_keys=[equipped_armor_id])
+    equipped_melee_weapon_id = db.Column(db.Integer, db.ForeignKey('item.id'))
+    equipped_melee_weapon = db.relationship('Item', foreign_keys=[equipped_melee_weapon_id])
+    equipped_ranged_weapon_id = db.Column(db.Integer, db.ForeignKey('item.id'))
+    equipped_ranged_weapon = db.relationship('Item', foreign_keys=[equipped_ranged_weapon_id])
