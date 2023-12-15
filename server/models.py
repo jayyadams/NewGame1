@@ -58,3 +58,35 @@ npc_items = db.Table('npc_items',
     db.Column('npc_id', db.Integer, db.ForeignKey('npc.id'), primary_key=True),
     db.Column('item_id', db.Integer, db.ForeignKey('item.id'), primary_key=True)
 )
+
+# Stats
+
+def get_stats(self):
+        return {
+            'max_hp': self.max_hp,
+            'vitality': self.vitality,
+            'strength': self.strength,
+            'dexterity': self.dexterity,
+            'speed': self.speed,
+            'luck': self.luck
+        }
+
+def calculate_stat(base, growth, level):
+    return round(base + (base * growth * (level - 1)))
+
+# Leveling up
+
+def level_up(self):
+        old_stats = self.get_stats()
+        self.level += 1
+        self.update_stats_for_level()
+        new_stats = self.get_stats()
+
+        return {
+            'level': self.level,
+            'old_stats': old_stats,
+            'new_stats': new_stats
+        }
+
+def calculate_required_exp(level):
+    return round(100 * (1.2 ** (level - 1)))
