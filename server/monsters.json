@@ -893,11 +893,20 @@
     },
     {
         "level": 100,
-        "name": "The Hero",
+        "name": "Demonized Hero",
         "strength": 1000,
         "vitality": 1000,
         "speed": 180,
         "max_hp": 10000000,
         "current_hp": 10000000
+    },
+    {
+        "level": 101,
+        "name": "Kamisama",
+        "strength": 1000,
+        "vitality": 1000,
+        "speed": 200,
+        "max_hp": 10000000000,
+        "current_hp": 10000000000
     }
 ]
