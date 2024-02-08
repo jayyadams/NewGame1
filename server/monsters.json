@@ -902,11 +902,20 @@
     },
     {
         "level": 101,
-        "name": "Kamisama",
+        "name": "Kami",
         "strength": 1000,
         "vitality": 1000,
         "speed": 200,
-        "max_hp": 10000000000,
-        "current_hp": 10000000000
+        "max_hp": 1000000000,
+        "current_hp": 1000000000
+    },
+    {
+        "level": 101,
+        "name": "The Real Kamisama",
+        "strength": 1000,
+        "vitality": 1000,
+        "speed": 200,
+        "max_hp": 1000000000000,
+        "current_hp": 1000000000000
     }
 ]
