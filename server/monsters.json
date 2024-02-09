@@ -917,5 +917,14 @@
         "speed": 200,
         "max_hp": 1000000000000,
         "current_hp": 1000000000000
+    },
+    {
+        "level": 102,
+        "name": "Kamisamas Ghost",
+        "strength": 10000,
+        "vitality": 10000,
+        "speed": 2000,
+        "max_hp": 100000000000000,
+        "current_hp": 100000000000000
     }
 ]
