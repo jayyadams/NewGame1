@@ -120,13 +120,4 @@ class Character(db.Model, SerializerMixin):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     last_saved = db.Column(db.DateTime, onupdate=datetime.utcnow)
 
-    equipped_necklace_id = db.Column(db.Integer, db.ForeignKey('item.id'))
-    equipped_necklace = db.relationship('Item', foreign_keys=[equipped_necklace_id])
-    equipped_armor_id = db.Column(db.Integer, db.ForeignKey('item.id'))
-    equipped_ring_id = db.Column(db.Integer, db.ForeignKey('item.id'))
-    equipped_ring = db.relationship('Item', foreign_keys=[equipped_ring_id])
-    equipped_armor = db.relationship('Item', foreign_keys=[equipped_armor_id])
-    equipped_melee_weapon_id = db.Column(db.Integer, db.ForeignKey('item.id'))
-    equipped_melee_weapon = db.relationship('Item', foreign_keys=[equipped_melee_weapon_id])
-    equipped_ranged_weapon_id = db.Column(db.Integer, db.ForeignKey('item.id'))
-    equipped_ranged_weapon = db.relationship('Item', foreign_keys=[equipped_ranged_weapon_id])
+    
