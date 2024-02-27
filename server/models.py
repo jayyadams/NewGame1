@@ -93,3 +93,40 @@ def calculate_required_exp(level):
 
 # Character 
 
+class Character(db.Model, SerializerMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+    level = db.Column(db.Integer, default=1)
+    exp = db.Column(db.Integer, default=0)
+    max_hp = db.Column(db.Integer, default=150)
+    current_hp = db.Column(db.Integer, default=150)
+    strength = db.Column(db.Integer, default=5)
+    vitality = db.Column(db.Integer, default=5)
+    dexterity = db.Column(db.Integer, default=5)
+    speed = db.Column(db.Integer, default=5)
+    armor = db.Column(db.Integer, default=0)
+    luck = db.Column(db.Integer, default=0)
+    dungeon_level = db.Column(db.Integer, default=0)
+    highest_dungeon_level = db.Column(db.Integer, default=0)
+    location = db.Column(db.String, nullable=False, default='Home')
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    has_seen_intro = db.Column(db.Boolean, default=False)
+    isInCombat = db.Column(db.Boolean, default=False)
+
+    inventory = db.relationship('CharacterItem', back_populates='character', cascade="delete, delete-orphan")
+    quests = db.relationship('CharacterQuest', back_populates='character')
+    gold = db.Column(db.Integer, default=69)
+
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    last_saved = db.Column(db.DateTime, onupdate=datetime.utcnow)
+
+    equipped_necklace_id = db.Column(db.Integer, db.ForeignKey('item.id'))
+    equipped_necklace = db.relationship('Item', foreign_keys=[equipped_necklace_id])
+    equipped_armor_id = db.Column(db.Integer, db.ForeignKey('item.id'))
+    equipped_ring_id = db.Column(db.Integer, db.ForeignKey('item.id'))
+    equipped_ring = db.relationship('Item', foreign_keys=[equipped_ring_id])
+    equipped_armor = db.relationship('Item', foreign_keys=[equipped_armor_id])
+    equipped_melee_weapon_id = db.Column(db.Integer, db.ForeignKey('item.id'))
+    equipped_melee_weapon = db.relationship('Item', foreign_keys=[equipped_melee_weapon_id])
+    equipped_ranged_weapon_id = db.Column(db.Integer, db.ForeignKey('item.id'))
+    equipped_ranged_weapon = db.relationship('Item', foreign_keys=[equipped_ranged_weapon_id])
