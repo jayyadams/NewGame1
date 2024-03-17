@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Bread",
+        "type": "Consumable",
+        "rarity": "Common",
+        "strength_bonus": 0,
+        "vitality_bonus": 0,
+        "armor_bonus": 0,
+        "luck_bonus": 0,
+        "dexterity_bonus": 0,
+        "speed_bonus": 0,
+        "price": 25
+      },
+      {
+        "name": "Health Potion",
+        "type": "Consumable",
+        "rarity": "Common",
+        "strength_bonus": 0,
+        "vitality_bonus": 0,
+        "armor_bonus": 0,
+        "luck_bonus": 0,
+        "dexterity_bonus": 0,
+        "speed_bonus": 0,
+        "price": 100
+      },
+      {
+        "name": "Mana Potion",
+        "type": "Consumable",
+        "rarity": "Common",
+        "strength_bonus": 0,
+        "vitality_bonus": 0,
+        "armor_bonus": 0,
+        "luck_bonus": 0,
+        "dexterity_bonus": 0,
+        "speed_bonus": 0,
+        "price": 50
+      }
+]
