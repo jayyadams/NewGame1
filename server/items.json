@@ -34,5 +34,41 @@
         "dexterity_bonus": 0,
         "speed_bonus": 0,
         "price": 50
+      },
+      {
+        "name": "Large Health Potion",
+        "type": "Consumable",
+        "rarity": "Uncommon",
+        "strength_bonus": 0,
+        "vitality_bonus": 0,
+        "armor_bonus": 0,
+        "luck_bonus": 0,
+        "dexterity_bonus": 0,
+        "speed_bonus": 0,
+        "price": 500
+      },
+      {
+        "name": "Extra Large Health Potion",
+        "type": "Consumable",
+        "rarity": "Rare",
+        "strength_bonus": 0,
+        "vitality_bonus": 0,
+        "armor_bonus": 0,
+        "luck_bonus": 0,
+        "dexterity_bonus": 0,
+        "speed_bonus": 0,
+        "price": 5000
+      },
+      {
+        "name": "Perfect Health Potion",
+        "type": "Consumable",
+        "rarity": "Epic",
+        "strength_bonus": 0,
+        "vitality_bonus": 0,
+        "armor_bonus": 0,
+        "luck_bonus": 0,
+        "dexterity_bonus": 0,
+        "speed_bonus": 0,
+        "price": 50000
       }
 ]
