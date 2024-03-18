@@ -262,5 +262,53 @@
         "dexterity_bonus": 0,
         "speed_bonus": 0,
         "price": 1000000
+      },
+      {
+        "name": "Necklace of Strength",
+        "type": "Necklace",
+        "rarity": "Rare",
+        "strength_bonus": 25,
+        "vitality_bonus": 0,
+        "armor_bonus": 0,
+        "luck_bonus": 0,
+        "dexterity_bonus": 0,
+        "speed_bonus": 0,
+        "price": 10000
+      },
+      {
+        "name": "Necklace of Vitality",
+        "type": "Necklace",
+        "rarity": "Rare",
+        "strength_bonus": 0,
+        "vitality_bonus": 25,
+        "armor_bonus": 0,
+        "luck_bonus": 0,
+        "dexterity_bonus": 0,
+        "speed_bonus": 0,
+        "price": 10000
+      },
+      {
+        "name": "Necklace of Luck",
+        "type": "Necklace",
+        "rarity": "Rare",
+        "strength_bonus": 0,
+        "vitality_bonus": 0,
+        "armor_bonus": 0,
+        "luck_bonus": 25,
+        "dexterity_bonus": 0,
+        "speed_bonus": 0,
+        "price": 10000
+      },
+      {
+        "name": "Necklace of Dexterity",
+        "type": "Necklace",
+        "rarity": "Rare",
+        "strength_bonus": 0,
+        "vitality_bonus": 0,
+        "armor_bonus": 0,
+        "luck_bonus": 0,
+        "dexterity_bonus": 25,
+        "speed_bonus": 0,
+        "price": 10000
       }
 ]
