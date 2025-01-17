@@ -130,3 +130,45 @@ class Character(db.Model, SerializerMixin):
     equipped_melee_weapon = db.relationship('Item', foreign_keys=[equipped_melee_weapon_id])
     equipped_ranged_weapon_id = db.Column(db.Integer, db.ForeignKey('item.id'))
     equipped_ranged_weapon = db.relationship('Item', foreign_keys=[equipped_ranged_weapon_id])
+
+    def custom_serialization(self):
+         required_exp = calculate_required_exp(self.level)
+         serialized_inventory = []
+         for character_item in self.inventory:
+              item = character_item.item
+              serialized_inventory.append({
+                   'id': item.id,
+                   'name':item.name,
+                   'type': item.type,
+                   'quantity': character_item.quantity
+              })
+              return {
+            'id': self.id,
+            'name': self.name,
+            'level': self.level,
+            'exp': self.exp,
+            'required_exp': required_exp,
+            'strength': self.strength,
+            'vitality': self.vitality,
+            'armor': self.armor,
+            'luck': self.luck,
+            'dexterity': self.dexterity,
+            'speed': self.speed,
+            'max_hp': self.max_hp,
+            'current_hp': self.current_hp,
+            'dungeon_level': self.dungeon_level,
+            'highest_dungeon_level': self.highest_dungeon_level,
+            'location': self.location,
+            'equipped_melee_weapon': self.equipped_melee_weapon.custom_serialize() if self.equipped_melee_weapon else None,
+            'equipped_ranged_weapon': self.equipped_ranged_weapon.custom_serialize() if self.equipped_ranged_weapon else None,
+            'equipped_armor': self.equipped_armor.custom_serialize() if self.equipped_armor else None,
+            'equipped_ring': self.equipped_ring.custom_serialize() if self.equipped_ring else None,
+            'equipped_necklace': self.equipped_necklace.custom_serialize() if self.equipped_necklace else None,
+            'inventory': serialized_inventory,
+            'quests': [character_quest.custom_serialize() for character_quest in self.quests],
+            'gold': self.gold,
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'last_saved': self.last_saved.isoformat() if self.last_saved else None,
+            'has_seen_intro': self.has_seen_intro,
+            'isInCombat': self.isInCombat
+              }
